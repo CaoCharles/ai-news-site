@@ -23,9 +23,12 @@ const today = new Date().toLocaleDateString('en-US', {
     </div>
 
     {/* Logo Area */}
-    <div class="py-8 text-center">
-      <a href={import.meta.env.BASE_URL} class="text-5xl md:text-7xl font-black tracking-tighter hover:opacity-80 transition-opacity">
-        AI NEWS<span class="text-news-accent">*</span>
+    <div class="py-12 text-center">
+      <a href={import.meta.env.BASE_URL} class="inline-flex items-center justify-center gap-4 group">
+        <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-news-accent group-hover:scale-110 transition-transform duration-300"><path d="M12 2a10 10 0 1 0 10 10 4 4 0 0 1-5-5 4 4 0 0 1-5-5"></path><path d="M8.5 8.5v.01"></path><path d="M16 12v.01"></path><path d="M12 16v.01"></path></svg>
+        <h1 class="text-6xl md:text-8xl font-serif font-black tracking-tight leading-none group-hover:opacity-90 transition-opacity">
+          AI NEWS<span class="text-news-accent">*</span>
+        </h1>
       </a>
     </div>
 
