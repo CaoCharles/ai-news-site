@@ -1,0 +1,89 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import HeroSection from '../components/HeroSection.astro';
+import ArticleCard from '../components/ArticleCard.astro';
+import ArticleGrid from '../components/ArticleGrid.astro';
+import SectionTitle from '../components/SectionTitle.astro';
+import CategoryStrip from '../components/CategoryStrip.astro';
+import PodcastCard from '../components/PodcastCard.astro';
+import { getCollection } from 'astro:content';
+
+const allPosts = await getCollection('posts');
+const sortedPosts = allPosts.sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+
+// 1. Hero Post (Latest)
+const heroPost = sortedPosts[0];
+
+// 2. Latest News (Next 5)
+const latestNews = sortedPosts.slice(1, 6);
+const mainLatest = latestNews[0];
+const sideLatest = latestNews.slice(1);
+
+// 3. Category Specific
+const worldNews = sortedPosts.filter(p => p.data.category === 'World').slice(0, 4);
+const techNews = sortedPosts.filter(p => p.data.category === 'Technology').slice(0, 4);
+const podcasts = sortedPosts.filter(p => p.data.category === 'Podcast').slice(0, 4);
+---
+
+<BaseLayout title="Home">
+  <CategoryStrip />
+
+  {/* Hero Section */}
+  {heroPost && <HeroSection post={heroPost} />}
+
+  {/* Latest News */}
+  <section class="mb-16">
+    <SectionTitle title="Latest News" />
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+      {/* Main Latest Card */}
+      {mainLatest && (
+        <div class="lg:col-span-2">
+          <ArticleCard post={mainLatest} class="h-full" />
+        </div>
+      )}
+      
+      {/* Side Cards */}
+      <div class="space-y-6">
+        {sideLatest.map(post => (
+          <ArticleCard post={post} horizontal={true} />
+        ))}
+      </div>
+    </div>
+  </section>
+
+  {/* World News */}
+  {worldNews.length > 0 && (
+    <section class="mb-16">
+      <SectionTitle title="World News" link="/world" />
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+        <div class="md:col-span-2 bg-news-black text-white p-6">
+          <ArticleCard post={worldNews[0]} class="text-white" />
+        </div>
+        <div class="md:col-span-2 grid grid-cols-1 gap-6">
+           {worldNews.slice(1).map(post => <ArticleCard post={post} horizontal={true} />)}
+        </div>
+      </div>
+    </section>
+  )}
+
+  {/* Technology News */}
+  {techNews.length > 0 && (
+    <section class="mb-16">
+      <SectionTitle title="Technology" link="/technology" />
+      <ArticleGrid>
+        {techNews.map(post => <ArticleCard post={post} />)}
+      </ArticleGrid>
+    </section>
+  )}
+
+  {/* Podcasts */}
+  {podcasts.length > 0 && (
+    <section class="mb-16">
+      <SectionTitle title="Podcasts" link="/podcasts" />
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+        {podcasts.map(post => <PodcastCard post={post} />)}
+      </div>
+    </section>
+  )}
+
+</BaseLayout>

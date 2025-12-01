@@ -1,0 +1,18 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import SectionTitle from '../components/SectionTitle.astro';
+import PodcastCard from '../components/PodcastCard.astro';
+import { getCollection } from 'astro:content';
+
+const allPosts = await getCollection('posts');
+const posts = allPosts
+  .filter(p => p.data.category === 'Podcast')
+  .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+---
+
+<BaseLayout title="Podcasts">
+  <SectionTitle title="Podcasts" />
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+    {posts.map(post => <PodcastCard post={post} />)}
+  </div>
+</BaseLayout>

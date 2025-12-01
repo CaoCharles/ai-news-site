@@ -1,0 +1,33 @@
+---
+import NavBar from './NavBar.astro';
+
+const today = new Date().toLocaleDateString('en-US', {
+  weekday: 'long',
+  year: 'numeric',
+  month: 'long',
+  day: 'numeric',
+});
+---
+
+<header class="bg-white text-news-black font-serif">
+  <div class="container mx-auto px-4">
+    {/* Top Bar */}
+    <div class="flex justify-between items-center py-2 text-xs font-sans border-b border-gray-200">
+      <span class="font-bold">{today}</span>
+      <div class="flex items-center gap-4">
+        <button class="hover:text-news-accent font-bold">The Menu</button>
+        <span class="cursor-pointer">🔍</span>
+      </div>
+    </div>
+
+    {/* Logo Area */}
+    <div class="py-8 text-center">
+      <a href={import.meta.env.BASE_URL} class="text-5xl md:text-7xl font-black tracking-tighter hover:opacity-80 transition-opacity">
+        AI NEWS<span class="text-news-accent">*</span>
+      </a>
+    </div>
+
+    {/* Navigation */}
+    <NavBar currentPath={Astro.url.pathname} />
+  </div>
+</header>

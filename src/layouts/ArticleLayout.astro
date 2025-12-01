@@ -1,0 +1,46 @@
+---
+import BaseLayout from './BaseLayout.astro';
+
+const { frontmatter } = Astro.props;
+---
+
+<BaseLayout title={frontmatter.title}>
+  <article class="max-w-4xl mx-auto bg-white p-8 md:p-12 shadow-sm">
+    <header class="mb-8 text-center">
+      <div class="flex justify-center gap-2 text-sm font-bold uppercase tracking-wider text-news-accent mb-4">
+        <span>{frontmatter.category}</span>
+        <span class="text-gray-400">•</span>
+        <span>{frontmatter.source}</span>
+      </div>
+      <h1 class="text-4xl md:text-6xl font-black font-serif mb-6 leading-tight">{frontmatter.title}</h1>
+      <div class="flex justify-center items-center gap-4 text-gray-500 text-sm font-sans">
+        <time>{new Date(frontmatter.date).toLocaleDateString()}</time>
+        <span>•</span>
+        <span>{frontmatter.readingTime}</span>
+      </div>
+    </header>
+
+    {frontmatter.heroImage && (
+      <div class="mb-10">
+        <img src={frontmatter.heroImage} alt={frontmatter.title} class="w-full h-auto" />
+      </div>
+    )}
+
+    <div class="prose prose-lg prose-slate mx-auto font-serif">
+      <slot />
+    </div>
+
+    <hr class="my-12 border-gray-200" />
+
+    <div class="bg-gray-50 p-6">
+      <h3 class="font-bold mb-2">Tags</h3>
+      <div class="flex flex-wrap gap-2">
+        {frontmatter.tags.map((tag: string) => (
+          <span class="bg-white border border-gray-200 px-3 py-1 text-xs font-bold uppercase tracking-wider text-gray-600">
+            #{tag}
+          </span>
+        ))}
+      </div>
+    </div>
+  </article>
+</BaseLayout>

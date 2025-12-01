@@ -1,0 +1,36 @@
+---
+import { getCollection } from 'astro:content';
+import ArticleLayout from '../layouts/ArticleLayout.astro';
+import SectionTitle from '../components/SectionTitle.astro';
+import ArticleCard from '../components/ArticleCard.astro';
+
+export async function getStaticPaths() {
+  const posts = await getCollection('posts');
+  return posts.map(post => ({
+    params: { slug: post.slug },
+    props: { post },
+  }));
+}
+
+const { post } = Astro.props;
+const { Content } = await post.render();
+
+// Get similar news (same category, excluding current)
+const allPosts = await getCollection('posts');
+const similarPosts = allPosts
+  .filter(p => p.data.category === post.data.category && p.slug !== post.slug)
+  .slice(0, 3);
+---
+
+<ArticleLayout frontmatter={post.data}>
+  <Content />
+
+  {similarPosts.length > 0 && (
+    <div class="mt-16">
+      <SectionTitle title="Similar News" />
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        {similarPosts.map(p => <ArticleCard post={p} />)}
+      </div>
+    </div>
+  )}
+</ArticleLayout>
