@@ -4,6 +4,6 @@ import tailwind from '@astrojs/tailwind';
 // https://astro.build/config
 export default defineConfig({
     site: 'https://CaoCharles.github.io',
-    base: '/multi_agent',
+    base: '/ai-news-site/',
     integrations: [tailwind()],
 });
