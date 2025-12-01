@@ -5,39 +5,39 @@ const { frontmatter } = Astro.props;
 ---
 
 <BaseLayout title={frontmatter.title}>
-  <article class="max-w-4xl mx-auto bg-white p-8 md:p-12 shadow-sm">
-    <header class="mb-8 text-center">
-      <div class="flex justify-center gap-2 text-sm font-bold uppercase tracking-wider text-news-accent mb-4">
-        <span>{frontmatter.category}</span>
-        <span class="text-gray-400">•</span>
-        <span>{frontmatter.source}</span>
+  <article class="max-w-[760px] mx-auto bg-white px-6 py-16 md:px-0 shadow-sm">
+    <header class="mb-12 text-center">
+      <div class="flex justify-center gap-3 text-sm font-bold uppercase tracking-widest text-news-accent mb-6">
+        <span class="text-gray-500">{frontmatter.category}</span>
+        <span class="text-gray-300">•</span>
+        <span>{frontmatter.source || 'AI News'}</span>
       </div>
-      <h1 class="text-4xl md:text-6xl font-black font-serif mb-6 leading-tight">{frontmatter.title}</h1>
-      <div class="flex justify-center items-center gap-4 text-gray-500 text-sm font-sans">
+      <h1 class="text-4xl md:text-5xl font-black font-sans mb-6 leading-tight tracking-tight text-gray-900">{frontmatter.title}</h1>
+      <div class="flex justify-center items-center gap-4 text-gray-500 text-sm font-sans tracking-wide">
         <time>{new Date(frontmatter.date).toLocaleDateString()}</time>
-        <span>•</span>
+        <span class="text-gray-300">•</span>
         <span>{frontmatter.readingTime}</span>
       </div>
     </header>
 
     {frontmatter.image && (
-      <div class="mb-10">
-        <img src={`${import.meta.env.BASE_URL}images/${(frontmatter.image || 'placeholder.jpg').replace(/^\//, '')}`} alt={frontmatter.title} class="w-full h-auto" />
+      <div class="mb-12 -mx-6 md:-mx-0">
+        <img src={`${import.meta.env.BASE_URL}images/${(frontmatter.image || 'placeholder.jpg').replace(/^\//, '')}`} alt={frontmatter.title} class="w-full h-auto rounded-sm" />
       </div>
     )}
 
-    <div class="prose prose-lg prose-slate mx-auto font-serif">
+    <div class="prose prose-lg prose-slate mx-auto font-sans prose-p:leading-relaxed prose-headings:font-bold prose-a:text-news-accent hover:prose-a:text-black transition-colors">
       <slot />
     </div>
 
-    <hr class="my-12 border-gray-200" />
+    <hr class="my-16 border-gray-100" />
 
     {frontmatter.tags && frontmatter.tags.length > 0 && (
-      <div class="bg-gray-50 p-6">
-        <h3 class="font-bold mb-2">Tags</h3>
-        <div class="flex flex-wrap gap-2">
+      <div class="bg-gray-50 p-8 rounded-lg">
+        <h3 class="font-bold mb-4 text-gray-900">Tags</h3>
+        <div class="flex flex-wrap gap-3">
           {frontmatter.tags.map((tag: string) => (
-            <span class="bg-white border border-gray-200 px-3 py-1 text-xs font-bold uppercase tracking-wider text-gray-600">
+            <span class="bg-white border border-gray-200 px-4 py-1.5 text-sm font-bold uppercase tracking-wider text-gray-600 hover:border-gray-400 transition-colors cursor-default">
               #{tag}
             </span>
           ))}
