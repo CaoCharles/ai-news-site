@@ -16,7 +16,7 @@ const { currentPath } = Astro.props;
     {navItems.map((item) => (
       <li>
         <a 
-          href={import.meta.env.BASE_URL + item.path.replace(/^\//, '')} 
+          href={`${import.meta.env.BASE_URL.replace(/\/$/, '')}${item.path}`} 
           class={`hover:text-news-accent transition-colors ${currentPath === item.path ? 'text-news-accent border-b-2 border-news-accent pb-1' : ''}`}
         >
           {item.name}

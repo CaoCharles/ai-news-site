@@ -5,13 +5,14 @@ const posts = defineCollection({
     // Type-check frontmatter using a schema
     schema: z.object({
         title: z.string(),
-        date: z.coerce.date(),
+        description: z.string(),
         category: z.enum(["Google", "Claude", "ChatGPT", "Grok", "Qianwen", "ModelEval"]),
-        source: z.enum(["Google", "OpenAI", "Anthropic", "Mixed"]),
-        tags: z.array(z.string()),
-        summary: z.string(),
-        heroImage: z.string().optional(),
-        readingTime: z.string().optional(),
+        date: z.coerce.date(),
+        image: z.string().default("placeholder.jpg"),
+        readingTime: z.string().default("5 Minutes"),
+        author: z.string().default("AI Reporter"),
+        source: z.enum(["Google", "OpenAI", "Anthropic", "Mixed"]).optional(),
+        tags: z.array(z.string()).optional(),
     }),
 });
 

@@ -141,44 +141,44 @@ declare module 'astro:content' {
 
 	type ContentEntryMap = {
 		"posts": {
-"chatgpt-o1.md": {
-	id: "chatgpt-o1.md";
-  slug: "chatgpt-o1";
+"chatgpt-o2-analysis-202511.md": {
+	id: "chatgpt-o2-analysis-202511.md";
+  slug: "chatgpt-o2-analysis-202511";
   body: string;
   collection: "posts";
   data: InferEntrySchema<"posts">
 } & { render(): Render[".md"] };
-"sample-claude-research.md": {
-	id: "sample-claude-research.md";
-  slug: "sample-claude-research";
+"claude-opus-4-5-202511.md": {
+	id: "claude-opus-4-5-202511.md";
+  slug: "claude-opus-4-5-202511";
   body: string;
   collection: "posts";
   data: InferEntrySchema<"posts">
 } & { render(): Render[".md"] };
-"sample-google-ai-trend.md": {
-	id: "sample-google-ai-trend.md";
-  slug: "sample-google-ai-trend";
+"google-gemini3-202511.md": {
+	id: "google-gemini3-202511.md";
+  slug: "google-gemini3-202511";
   body: string;
   collection: "posts";
   data: InferEntrySchema<"posts">
 } & { render(): Render[".md"] };
-"sample-openai-update.md": {
-	id: "sample-openai-update.md";
-  slug: "sample-openai-update";
+"grok-4-1-202511.md": {
+	id: "grok-4-1-202511.md";
+  slug: "grok-4-1-202511";
   body: string;
   collection: "posts";
   data: InferEntrySchema<"posts">
 } & { render(): Render[".md"] };
-"sample-podcast.md": {
-	id: "sample-podcast.md";
-  slug: "sample-podcast";
+"model-eval-202511.md": {
+	id: "model-eval-202511.md";
+  slug: "model-eval-202511";
   body: string;
   collection: "posts";
   data: InferEntrySchema<"posts">
 } & { render(): Render[".md"] };
-"sample-sports-ai.md": {
-	id: "sample-sports-ai.md";
-  slug: "sample-sports-ai";
+"qwen-3-max-202511.md": {
+	id: "qwen-3-max-202511.md";
+  slug: "qwen-3-max-202511";
   body: string;
   collection: "posts";
   data: InferEntrySchema<"posts">

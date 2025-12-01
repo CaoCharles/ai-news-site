@@ -5,7 +5,7 @@ const { title, link, linkText } = Astro.props;
 <div class="flex justify-between items-end border-b-4 border-black mb-6 pb-2">
   <h2 class="text-3xl font-black uppercase tracking-tighter">{title}</h2>
   {link && (
-    <a href={link} class="text-sm font-bold hover:text-news-accent flex items-center gap-1">
+    <a href={`${import.meta.env.BASE_URL.replace(/\/$/, '')}${link}`} class="text-sm font-bold hover:text-news-accent flex items-center gap-1">
       {linkText || "View All"} <span>&rarr;</span>
     </a>
   )}

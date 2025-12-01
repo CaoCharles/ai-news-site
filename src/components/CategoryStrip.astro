@@ -9,9 +9,9 @@ const categories = [
 
 <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
   {categories.map((cat) => (
-    <div class={`p-3 rounded-sm ${cat.color} flex items-center justify-between cursor-pointer hover:opacity-80`}>
+    <a href={`${import.meta.env.BASE_URL.replace(/\/$/, '')}/${cat.name.toLowerCase() === '千問' ? 'qianwen' : cat.name.toLowerCase()}`} class={`block p-3 rounded-sm ${cat.color} flex items-center justify-between cursor-pointer hover:opacity-80 transition-opacity`}>
       <span class="font-bold text-sm">{cat.name}</span>
       <span class="text-xs opacity-60">Trending &rarr;</span>
-    </div>
+    </a>
   ))}
 </div>
