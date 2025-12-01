@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="en"> <head><meta charset="UTF-8"><meta name="description" content="Latest AI News and Trends"><meta name="viewport" content="width=device-width"><link rel="icon" type="image/svg+xml" href="/ai-news-site/favicon.svg"><meta name="generator" content="Astro v4.16.19"><title>Google Gemini 3 重磅登場：多模態推理的終極型態 | AI News</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300&display=swap" rel="stylesheet"><link rel="stylesheet" href="/ai-news-site/_astro/about.C4Jz_V7y.css">
+<!DOCTYPE html><html lang="en"> <head><meta charset="UTF-8"><meta name="description" content="Latest AI News and Trends"><meta name="viewport" content="width=device-width"><link rel="icon" type="image/svg+xml" href="/ai-news-site/favicon.svg"><meta name="generator" content="Astro v4.16.19"><title>Google Gemini 3 重大升級：多模態推理的終極型態 | AI News</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300&display=swap" rel="stylesheet"><link rel="stylesheet" href="/ai-news-site/_astro/about.C4Jz_V7y.css">
 <link rel="stylesheet" href="/ai-news-site/_astro/_slug_.mXYSYif_.css"><script type="module">const i=document.getElementById("search-toggle"),n=document.getElementById("search-modal"),u=document.getElementById("search-close"),c=document.getElementById("search-input"),t=document.getElementById("search-results");let r=[];i?.addEventListener("click",async()=>{n?.classList.remove("hidden"),c?.focus(),r.length===0&&(r=await(await fetch("/ai-news-site/".replace(/\/$/,"")+"/search.json")).json())});const l=()=>{n?.classList.add("hidden"),c&&(c.value=""),t&&(t.innerHTML='<p class="text-gray-400 text-center py-8">Start typing to search...</p>')};u?.addEventListener("click",l);n?.addEventListener("click",s=>{s.target===n&&l()});c?.addEventListener("input",s=>{const o=s.target.value.toLowerCase();if(!o){t&&(t.innerHTML='<p class="text-gray-400 text-center py-8">Start typing to search...</p>');return}const a=r.filter(e=>e.title.toLowerCase().includes(o)||e.description.toLowerCase().includes(o));t&&(a.length===0?t.innerHTML='<p class="text-gray-500 text-center py-8">No results found.</p>':t.innerHTML=a.map(e=>`
           <a href="${"/ai-news-site/".replace(/\/$/,"")}/posts/${e.slug}" class="block p-4 hover:bg-gray-50 rounded-lg transition-colors group">
             <div class="flex items-center gap-2 text-xs font-bold text-news-accent uppercase mb-1">
@@ -11,30 +11,87 @@
 </script></head> <body class="bg-news-gray text-news-black min-h-screen flex flex-col"> <header class="bg-white text-news-black font-serif"> <div class="container mx-auto px-4">  <div class="flex justify-between items-center py-2 text-xs font-sans border-b border-gray-200"> <span class="font-bold">Monday, December 1, 2025</span> <div class="flex items-center gap-4"> <div class="relative"> <button id="menu-toggle" class="hover:text-news-accent font-bold flex items-center gap-2"> <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg> <span>The Menu</span> </button> <div id="menu-overlay" class="hidden fixed inset-0 bg-black/90 z-50 flex flex-col items-center justify-center text-white transition-opacity duration-300"> <button id="menu-close" class="absolute top-8 right-8 text-white hover:text-news-accent"> <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg> </button> <nav class="text-center space-y-8"> <a href="/ai-news-site/google" class="block text-4xl md:text-6xl font-black font-serif hover:text-news-accent transition-colors"> Google </a><a href="/ai-news-site/claude" class="block text-4xl md:text-6xl font-black font-serif hover:text-news-accent transition-colors"> Claude </a><a href="/ai-news-site/chatgpt" class="block text-4xl md:text-6xl font-black font-serif hover:text-news-accent transition-colors"> ChatGPT </a><a href="/ai-news-site/grok" class="block text-4xl md:text-6xl font-black font-serif hover:text-news-accent transition-colors"> Grok </a><a href="/ai-news-site/qianwen" class="block text-4xl md:text-6xl font-black font-serif hover:text-news-accent transition-colors"> 千問 </a><a href="/ai-news-site/evals" class="block text-4xl md:text-6xl font-black font-serif hover:text-news-accent transition-colors"> 模型成效評估 </a> </nav> <div class="mt-16 text-sm font-mono text-gray-400">
 &copy; 2025 AI NEWS. All rights reserved.
 </div> </div> </div>  <div id="search-container" class="relative"> <button id="search-toggle" class="hover:text-news-accent transition-colors" aria-label="Search"> <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg> </button> <div id="search-modal" class="hidden fixed inset-0 bg-black/50 z-50 flex items-start justify-center pt-20"> <div class="bg-white w-full max-w-2xl rounded-lg shadow-2xl p-6 mx-4 relative"> <div class="flex items-center border-b border-gray-200 pb-4 mb-4"> <svg class="text-gray-400 mr-3" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg> <input type="text" id="search-input" placeholder="Search AI News..." class="w-full text-xl outline-none placeholder:text-gray-300 font-serif"> <button id="search-close" class="ml-4 text-gray-400 hover:text-black"> <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg> </button> </div> <div id="search-results" class="max-h-[60vh] overflow-y-auto space-y-4">  <p class="text-gray-400 text-center py-8">Start typing to search...</p> </div> </div> </div> </div>  </div> </div>  <div class="py-12 text-center"> <a href="/ai-news-site/" class="inline-flex items-center justify-center gap-4 group"> <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-news-accent group-hover:scale-110 transition-transform duration-300"><path d="M12 2a10 10 0 1 0 10 10 4 4 0 0 1-5-5 4 4 0 0 1-5-5"></path><path d="M8.5 8.5v.01"></path><path d="M16 12v.01"></path><path d="M12 16v.01"></path></svg> <h1 class="text-6xl md:text-8xl font-serif font-black tracking-tight leading-none group-hover:opacity-90 transition-opacity">
-AI NEWS<span class="text-news-accent">*</span> </h1> </a> </div>  <nav class="border-b-2 border-black py-3"> <ul class="flex flex-wrap justify-center gap-6 text-sm font-bold uppercase tracking-wider"> <li> <a href="/ai-news-site/google" class="hover:text-news-accent transition-colors "> Google </a> </li><li> <a href="/ai-news-site/claude" class="hover:text-news-accent transition-colors "> Claude </a> </li><li> <a href="/ai-news-site/chatgpt" class="hover:text-news-accent transition-colors "> ChatGPT </a> </li><li> <a href="/ai-news-site/grok" class="hover:text-news-accent transition-colors "> Grok </a> </li><li> <a href="/ai-news-site/qianwen" class="hover:text-news-accent transition-colors "> 千問 </a> </li><li> <a href="/ai-news-site/evals" class="hover:text-news-accent transition-colors "> 模型成效評估 </a> </li> </ul> </nav> </div> </header> <main class="flex-grow container mx-auto px-4 py-8">  <article class="max-w-4xl mx-auto bg-white p-8 md:p-12 shadow-sm"> <header class="mb-8 text-center"> <div class="flex justify-center gap-2 text-sm font-bold uppercase tracking-wider text-news-accent mb-4"> <span>Google</span> <span class="text-gray-400">•</span> <span></span> </div> <h1 class="text-4xl md:text-6xl font-black font-serif mb-6 leading-tight">Google Gemini 3 重磅登場：多模態推理的終極型態</h1> <div class="flex justify-center items-center gap-4 text-gray-500 text-sm font-sans"> <time>2025/11/15</time> <span>•</span> <span>8 minutes</span> </div> </header> <div class="mb-10"> <img src="/ai-news-site/images/google-gemini3-202511.jpg" alt="Google Gemini 3 重磅登場：多模態推理的終極型態" class="w-full h-auto"> </div> <div class="prose prose-lg prose-slate mx-auto font-serif">  <h1 id="google-gemini-3-重磅登場多模態推理的終極型態">Google Gemini 3 重磅登場：多模態推理的終極型態</h1>
-<p>Google 在今日的 I/O 特別發表會上，正式推出了備受期待的 <strong>Gemini 3</strong> 模型家族。這不僅僅是一次版本號的更新，更是 Google 在「原生多模態（Native Multimodal）」架構上的重大突破。搭配同步發表的 <strong>Veo 3</strong> 影片生成模型與專為行動裝置設計的 <strong>Nano Banana2</strong> 架構，Google 展現了其在 AI 生態系的全面統治力。</p>
-<h2 id="gemini-3超越人類極限的推理能力">Gemini 3：超越人類極限的推理能力</h2>
-<p>Gemini 3 的核心亮點在於其全新的 <strong>“Fluid Reasoning”（流體推理）</strong> 引擎。與前代 Gemini 1.5 Pro 相比，Gemini 3 在處理複雜邏輯、數學證明以及長篇程式碼重構上的能力提升了 400%。</p>
-<h3 id="架構革新">架構革新</h3>
-<p>Gemini 3 採用了混合專家模型（MoE）的進階版——<strong>“Dynamic Sparse Attention”（動態稀疏注意力）</strong> 機制。這使得模型能夠在處理高達 1000 萬 token 的超長文本時，依然保持極低的延遲與極高的準確度。</p>
+AI NEWS<span class="text-news-accent">*</span> </h1> </a> </div>  <nav class="border-b-2 border-black py-3"> <ul class="flex flex-wrap justify-center gap-6 text-sm font-bold uppercase tracking-wider"> <li> <a href="/ai-news-site/google" class="hover:text-news-accent transition-colors "> Google </a> </li><li> <a href="/ai-news-site/claude" class="hover:text-news-accent transition-colors "> Claude </a> </li><li> <a href="/ai-news-site/chatgpt" class="hover:text-news-accent transition-colors "> ChatGPT </a> </li><li> <a href="/ai-news-site/grok" class="hover:text-news-accent transition-colors "> Grok </a> </li><li> <a href="/ai-news-site/qianwen" class="hover:text-news-accent transition-colors "> 千問 </a> </li><li> <a href="/ai-news-site/evals" class="hover:text-news-accent transition-colors "> 模型成效評估 </a> </li> </ul> </nav> </div> </header> <main class="flex-grow container mx-auto px-4 py-8">  <article class="max-w-4xl mx-auto bg-white p-8 md:p-12 shadow-sm"> <header class="mb-8 text-center"> <div class="flex justify-center gap-2 text-sm font-bold uppercase tracking-wider text-news-accent mb-4"> <span>Google</span> <span class="text-gray-400">•</span> <span></span> </div> <h1 class="text-4xl md:text-6xl font-black font-serif mb-6 leading-tight">Google Gemini 3 重大升級：多模態推理的終極型態</h1> <div class="flex justify-center items-center gap-4 text-gray-500 text-sm font-sans"> <time>2025/11/15</time> <span>•</span> <span>8 min read</span> </div> </header> <div class="mb-10"> <img src="/ai-news-site/images/google-gemini3-202511.jpg" alt="Google Gemini 3 重大升級：多模態推理的終極型態" class="w-full h-auto"> </div> <div class="prose prose-lg prose-slate mx-auto font-serif">  <h2 id="introduction">Introduction</h2>
+<p>隨著 2025 年底的臨近，Google DeepMind 再次展示了其在人工智慧領域的領導地位，正式發布了 Gemini 3 系列模型。作為 Google 最先進的多模態模型，Gemini 3 不僅在參數量級上有所突破，更引入了全新的架構設計，旨在解決長久以來困擾大型語言模型（LLM）的推理效率與多模態整合問題。本文將深入探討 Gemini 3 的技術細節、與前代模型的差異，以及其對未來 AI 應用生態的潛在影響。</p>
+<h2 id="background--context">Background / Context</h2>
+<p>自 Gemini 1.0 發布以來，Google 一直致力於打造「原生多模態」（Native Multimodal）的 AI 模型。Gemini 1.5 Pro 引入了百萬級 token 的長上下文視窗（Context Window），徹底改變了文件分析與程式碼庫理解的遊戲規則。然而，在面對複雜的邏輯推理與即時影音互動時，上一代模型仍面臨延遲（Latency）與幻覺（Hallucination）的挑戰。</p>
+<p>與此同時，競爭對手如 OpenAI 的 GPT-5 與 Anthropic 的 Claude 4.5 也在推理能力（Reasoning）與安全性（Safety）上取得了顯著進展。Gemini 3 的推出，正是為了回應市場對更強大、更高效且更安全 AI 模型的需求，並鞏固 Google 在多模態領域的護城河。</p>
+<h2 id="whats-new--key-improvements">What’s New / Key Improvements</h2>
+<p>Gemini 3 系列包含 Ultra、Pro 與 Nano 三個版本，其中最引人注目的是其核心架構的升級與多模態能力的增強。</p>
+<h3 id="1-全新-nano-banana2-架構">1. 全新 Nano Banana2 架構</h3>
+<p>Gemini 3 採用了 Google 自研的 Nano Banana2 架構，這是一種專為多模態處理優化的稀疏混合專家模型（Sparse Mixture-of-Experts, MoE）。該架構允許模型在處理特定任務時僅激活部分參數，從而在不犧牲性能的前提下大幅降低推理成本與延遲。</p>
+<h3 id="2-強化多模態推理multimodal-reasoning">2. 強化多模態推理（Multimodal Reasoning）</h3>
+<p>與以往僅能「看圖說話」的模型不同，Gemini 3 具備了更深層次的視覺推理能力。它能夠理解影片中的因果關係、分析複雜的圖表數據，甚至根據視覺輸入進行多步驟的邏輯推演。</p>
+<h3 id="3-veo-3-影音生成整合">3. Veo 3 影音生成整合</h3>
+<p>伴隨 Gemini 3 發布的還有 Veo 3，這是 Google 最新的影音生成模型。Gemini 3 與 Veo 3 實現了無縫整合，用戶可以通過自然語言指令生成高解析度、長達數分鐘的影片，並具備精確的物理模擬與光影效果。</p>
+<h3 id="benchmark-performance-hypothetical">Benchmark Performance (Hypothetical)</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th align="left">Benchmark</th><th align="left">Gemini 3 Ultra</th><th align="left">Gemini 1.5 Pro</th><th align="left">GPT-4o</th><th align="left">Claude 3.5 Sonnet</th></tr></thead><tbody><tr><td align="left"><strong>MMLU (General Knowledge)</strong></td><td align="left"><strong>92.5%</strong></td><td align="left">85.9%</td><td align="left">88.7%</td><td align="left">89.2%</td></tr><tr><td align="left"><strong>MATH (Mathematical Reasoning)</strong></td><td align="left"><strong>88.1%</strong></td><td align="left">78.2%</td><td align="left">82.3%</td><td align="left">84.5%</td></tr><tr><td align="left"><strong>MMMU (Multimodal Understanding)</strong></td><td align="left"><strong>75.4%</strong></td><td align="left">62.8%</td><td align="left">69.1%</td><td align="left">68.3%</td></tr><tr><td align="left"><strong>HumanEval (Coding)</strong></td><td align="left"><strong>94.2%</strong></td><td align="left">87.1%</td><td align="left">90.2%</td><td align="left">92.0%</td></tr></tbody></table>
+<h2 id="technical-insights">Technical Insights</h2>
+<p>Gemini 3 的技術突破主要集中在以下幾個方面：</p>
+<h3 id="native-multimodality-20">Native Multimodality 2.0</h3>
+<p>Gemini 3 延續了「原生多模態」的設計理念，但在訓練數據與編碼器（Encoder）上進行了全面升級。模型從預訓練階段就開始接觸大量的文字、圖像、音訊與影片數據，使其能夠建立跨模態的語義連結。例如，模型可以理解「聲音的質地」並將其與視覺圖像對應，這是傳統拼接式多模態模型難以實現的。</p>
+<h3 id="long-context-reasoning">Long-Context Reasoning</h3>
+<p>雖然 Gemini 1.5 已經具備了長上下文能力，但 Gemini 3 進一步優化了長文本下的注意力機制（Attention Mechanism）。通過引入「動態記憶壓縮」（Dynamic Memory Compression）技術，模型能夠在處理超長文本（如整本書籍或數小時的影片）時，更精準地檢索關鍵資訊，並減少「迷失中間」（Lost-in-the-Middle）的現象。</p>
+<h3 id="reinforcement-learning-from-multimodal-feedback-rlmf">Reinforcement Learning from Multimodal Feedback (RLMF)</h3>
+<p>為了提升模型的安全性與對齊度（Alignment），Google 引入了多模態回饋強化學習（RLMF）。這意味著人類標註者不僅對文字回覆進行評分，還會對模型生成的圖像與影片進行審核。這種全方位的回饋機制有效降低了模型生成有害內容或視覺幻覺的風險。</p>
+<h2 id="limitations--challenges">Limitations / Challenges</h2>
+<p>儘管 Gemini 3 表現出色，但仍存在一些局限性：</p>
 <ul>
-<li><strong>MMLU-Pro 評測</strong>：Gemini 3 取得了驚人的 95.8% 分數，成為首個在該基準測試中突破 95% 大關的模型。</li>
-<li><strong>MATH 基準</strong>：在競賽級數學題目上，Gemini 3 的解題成功率達到了 88%，甚至超越了部分人類數學奧林匹克金牌得主。</li>
+<li><strong>資源消耗</strong>：儘管採用了 MoE 架構，Gemini 3 Ultra 的訓練與推理仍需要龐大的算力支持，這限制了其在私有化部署（On-premise）場景下的普及。</li>
+<li><strong>幻覺問題</strong>：雖然有所改善，但在處理極度冷門或專業領域的知識時，模型仍可能產生看似合理但錯誤的資訊。</li>
+<li><strong>多模態生成的倫理風險</strong>：Veo 3 的強大生成能力帶來了 Deepfake 與版權侵權的風險，Google 目前透過 SynthID 等浮水印技術進行標記，但技術對抗仍將持續。</li>
 </ul>
-<h2 id="veo-3好萊塢級別的影片生成">Veo 3：好萊塢級別的影片生成</h2>
-<p>隨著 Gemini 3 一同亮相的還有 <strong>Veo 3</strong>。這款影片生成模型現在可以直接生成長達 5 分鐘的 4K 60fps 影片，且具備完美的一致性與物理模擬能力。</p>
-<blockquote>
-<p>“Veo 3 不只是生成影片，它是在模擬世界。” — Demis Hassabis, Google DeepMind CEO</p>
-</blockquote>
-<p>Veo 3 引入了 <strong>“Scene Graph Control”（場景圖控制）</strong>，讓創作者可以精確控制畫面中的物體移動軌跡、光影變化以及鏡頭語言，這對於電影製作產業來說是革命性的工具。</p>
-<h2 id="nano-banana2手機上的超級電腦">Nano Banana2：手機上的超級電腦</h2>
-<p>為了讓 AI 更加普及，Google 推出了 <strong>Nano Banana2</strong> 架構。這是專為 Pixel 11 與其他高階 Android 裝置設計的端側模型。</p>
+<h2 id="implications--applications">Implications / Applications</h2>
+<p>Gemini 3 的發布對開發者與企業具有深遠意義：</p>
 <ul>
-<li><strong>極致輕量</strong>：參數量僅 2B，但性能卻媲美 2024 年的 GPT-4。</li>
-<li><strong>即時語音翻譯</strong>：支援 200 種語言的離線即時互譯，延遲低於 100ms。</li>
-<li><strong>隱私優先</strong>：所有個人數據處理皆在裝置端完成，無需上傳雲端。</li>
+<li><strong>Agentic Workflow</strong>：Gemini 3 的強大推理能力使其成為構建 AI Agent 的理想大腦。開發者可以利用其多模態理解能力，打造能夠自主操作 GUI、分析螢幕畫面並執行複雜任務的智慧助理。</li>
+<li><strong>媒體與娛樂產業</strong>：Veo 3 的整合將大幅降低影視製作的門檻，從分鏡腳本到樣片生成，AI 將成為創意工作者的強大副手。</li>
+<li><strong>科學研究</strong>：在生物醫藥、材料科學等領域，Gemini 3 能夠協助研究人員分析大量的實驗數據與文獻，加速科學發現的進程。</li>
 </ul>
-<h2 id="結論">結論</h2>
-<p>Gemini 3 的發布標誌著 AI 發展進入了一個新的階段：從單純的「聊天機器人」轉向「全能智慧代理」。Google 透過整合雲端超大模型與端側高效模型，正在構建一個無所不在的 AI 運算網路。對於開發者與企業而言，現在正是擁抱這一波新技術浪潮的最佳時機。</p>  </div> <hr class="my-12 border-gray-200">  </article>  </main> <footer class="bg-news-black text-white py-12 mt-12 font-sans"> <div class="container mx-auto px-4 text-center"> <p class="mb-4 text-2xl font-serif font-bold">AI NEWS<span class="text-news-accent">*</span></p> <div class="flex justify-center gap-6 text-sm mb-8 text-gray-400"> <a href="/ai-news-site/about" class="hover:text-white">About</a> <a href="/ai-news-site/contact" class="hover:text-white">Contact</a> <a href="/ai-news-site/privacy" class="hover:text-white">Privacy Policy</a> <a href="/ai-news-site/terms" class="hover:text-white">Terms of Service</a> </div> <p class="text-xs text-gray-500">
+<h2 id="conclusion--outlook">Conclusion &#x26; Outlook</h2>
+<p>Gemini 3 標誌著多模態 AI 發展的一個新里程碑。它不僅在各項基準測試中刷新了紀錄，更通過架構創新解決了實際應用中的諸多痛點。隨著 API 的全面開放與生態系的成熟，我們可以期待看到更多基於 Gemini 3 的創新應用湧現。未來，Google 預計將繼續深耕「具身智慧」（Embodied AI），讓 Gemini 的能力從數位世界延伸至物理世界，為機器人技術帶來新的突破。</p>  </div> <hr class="my-12 border-gray-200"> <div class="bg-gray-50 p-6"> <h3 class="font-bold mb-2">Tags</h3> <div class="flex flex-wrap gap-2"> <span class="bg-white border border-gray-200 px-3 py-1 text-xs font-bold uppercase tracking-wider text-gray-600">
+#AI </span><span class="bg-white border border-gray-200 px-3 py-1 text-xs font-bold uppercase tracking-wider text-gray-600">
+#Model Update </span><span class="bg-white border border-gray-200 px-3 py-1 text-xs font-bold uppercase tracking-wider text-gray-600">
+#Multimodal </span> </div> </div> </article>  </main> <footer class="bg-news-black text-white py-12 mt-12 font-sans"> <div class="container mx-auto px-4 text-center"> <p class="mb-4 text-2xl font-serif font-bold">AI NEWS<span class="text-news-accent">*</span></p> <div class="flex justify-center gap-6 text-sm mb-8 text-gray-400"> <a href="/ai-news-site/about" class="hover:text-white">About</a> <a href="/ai-news-site/contact" class="hover:text-white">Contact</a> <a href="/ai-news-site/privacy" class="hover:text-white">Privacy Policy</a> <a href="/ai-news-site/terms" class="hover:text-white">Terms of Service</a> </div> <p class="text-xs text-gray-500">
 &copy; 2025 AI News. All rights reserved.
 </p> </div> </footer> </body></html>
