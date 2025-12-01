@@ -20,9 +20,9 @@ const { frontmatter } = Astro.props;
       </div>
     </header>
 
-    {frontmatter.heroImage && (
+    {frontmatter.image && (
       <div class="mb-10">
-        <img src={frontmatter.heroImage} alt={frontmatter.title} class="w-full h-auto" />
+        <img src={`${import.meta.env.BASE_URL}images/${(frontmatter.image || 'placeholder.jpg').replace(/^\//, '')}`} alt={frontmatter.title} class="w-full h-auto" />
       </div>
     )}
 
@@ -32,15 +32,17 @@ const { frontmatter } = Astro.props;
 
     <hr class="my-12 border-gray-200" />
 
-    <div class="bg-gray-50 p-6">
-      <h3 class="font-bold mb-2">Tags</h3>
-      <div class="flex flex-wrap gap-2">
-        {frontmatter.tags.map((tag: string) => (
-          <span class="bg-white border border-gray-200 px-3 py-1 text-xs font-bold uppercase tracking-wider text-gray-600">
-            #{tag}
-          </span>
-        ))}
+    {frontmatter.tags && frontmatter.tags.length > 0 && (
+      <div class="bg-gray-50 p-6">
+        <h3 class="font-bold mb-2">Tags</h3>
+        <div class="flex flex-wrap gap-2">
+          {frontmatter.tags.map((tag: string) => (
+            <span class="bg-white border border-gray-200 px-3 py-1 text-xs font-bold uppercase tracking-wider text-gray-600">
+              #{tag}
+            </span>
+          ))}
+        </div>
       </div>
-    </div>
+    )}
   </article>
 </BaseLayout>

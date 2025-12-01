@@ -38,13 +38,17 @@ An Astro-based static site for tracking AI ecosystem trends and technical docume
 
 ## Deployment (GitHub Pages)
 
-This project is configured to deploy to GitHub Pages via GitHub Actions.
+This project is configured to deploy automatically to GitHub Pages using GitHub Actions.
 
-1. Go to your repository **Settings** > **Pages**.
-2. Under "Build and deployment", select **GitHub Actions** as the source.
-3. The workflow defined in `.github/workflows/deploy.yml` will automatically build and deploy on push to `main`.
+### Setup
+1. Go to your repository on GitHub.
+2. Navigate to **Settings** > **Pages**.
+3. Under **Build and deployment**, set **Source** to **GitHub Actions**.
 
-> **IMPORTANT**: Update `astro.config.mjs` with your actual repository name in the `base` property (currently set to `/ai-trends-site`).
+### Usage
+Simply push your changes to the `main` branch. The workflow defined in `.github/workflows/deploy.yml` will automatically build and deploy your site.
+
+> **Note**: `astro.config.mjs` has been configured with `base: '/multi_agent'` to match your repository name.
 
 ## Contribution Guide for Agents
 

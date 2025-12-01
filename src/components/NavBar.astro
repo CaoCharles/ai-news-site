@@ -1,12 +1,11 @@
 ---
 const navItems = [
-  { name: "World News", path: "/world" },
-  { name: "Business", path: "/business" }, // Placeholder page
-  { name: "Technology", path: "/technology" },
-  { name: "Health", path: "/health" }, // Placeholder page
-  { name: "Sports", path: "/sports" }, // Placeholder page
-  { name: "Culture", path: "/culture" }, // Placeholder page
-  { name: "Podcast", path: "/podcasts" },
+  { name: "Google", path: "/google" },
+  { name: "Claude", path: "/claude" },
+  { name: "ChatGPT", path: "/chatgpt" },
+  { name: "Grok", path: "/grok" },
+  { name: "千問", path: "/qianwen" },
+  { name: "模型成效評估", path: "/evals" },
 ];
 
 const { currentPath } = Astro.props;
@@ -17,7 +16,7 @@ const { currentPath } = Astro.props;
     {navItems.map((item) => (
       <li>
         <a 
-          href={import.meta.env.BASE_URL + item.path.replace(/^\//, '')} 
+          href={`${import.meta.env.BASE_URL.replace(/\/$/, '')}${item.path}`} 
           class={`hover:text-news-accent transition-colors ${currentPath === item.path ? 'text-news-accent border-b-2 border-news-accent pb-1' : ''}`}
         >
           {item.name}

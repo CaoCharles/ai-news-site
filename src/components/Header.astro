@@ -1,5 +1,7 @@
 ---
 import NavBar from './NavBar.astro';
+import SearchWidget from './SearchWidget.astro';
+import MenuWidget from './MenuWidget.astro';
 
 const today = new Date().toLocaleDateString('en-US', {
   weekday: 'long',
@@ -15,8 +17,8 @@ const today = new Date().toLocaleDateString('en-US', {
     <div class="flex justify-between items-center py-2 text-xs font-sans border-b border-gray-200">
       <span class="font-bold">{today}</span>
       <div class="flex items-center gap-4">
-        <button class="hover:text-news-accent font-bold">The Menu</button>
-        <span class="cursor-pointer">🔍</span>
+        <MenuWidget />
+        <SearchWidget />
       </div>
     </div>
 

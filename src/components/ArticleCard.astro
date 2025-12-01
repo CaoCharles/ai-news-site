@@ -3,13 +3,17 @@ import { Image } from 'astro:assets';
 
 const { post, class: className, horizontal = false } = Astro.props;
 const { slug, data } = post;
+
+const base = import.meta.env.BASE_URL;
+const imgName = (data.image || 'placeholder.jpg').replace(/^\//, '');
+const src = `${base}images/${imgName}`;
 ---
 
 <article class={`group cursor-pointer ${className}`}>
-  <a href={`${import.meta.env.BASE_URL}/posts/${slug}`} class={`block ${horizontal ? 'md:flex md:gap-6' : ''}`}>
+  <a href={`${import.meta.env.BASE_URL.replace(/\/$/, '')}/posts/${slug}`} class={`block ${horizontal ? 'md:flex md:gap-6' : ''}`}>
     <div class={`overflow-hidden relative ${horizontal ? 'md:w-1/3' : 'w-full aspect-[4/3] mb-4'}`}>
       <img 
-        src={data.heroImage || "/images/placeholders/default.jpg"} 
+        src={src} 
         alt={data.title} 
         class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
       />
@@ -23,7 +27,7 @@ const { slug, data } = post;
         {data.title}
       </h3>
       <p class="text-gray-600 text-sm line-clamp-2 mb-2 font-sans">
-        {data.summary}
+        {data.description}
       </p>
       <time class="text-xs text-gray-400 font-sans">{new Date(data.date).toLocaleDateString()}</time>
     </div>

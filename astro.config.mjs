@@ -3,7 +3,7 @@ import tailwind from '@astrojs/tailwind';
 
 // https://astro.build/config
 export default defineConfig({
-    site: 'https://example.github.io', // Placeholder, should be updated by user
-    base: '/ai-trends-site', // Placeholder, matches the repo name usually
+    site: 'https://CaoCharles.github.io',
+    base: '/multi_agent',
     integrations: [tailwind()],
 });
