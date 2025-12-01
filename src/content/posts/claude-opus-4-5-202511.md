@@ -2,7 +2,7 @@
 title: "Claude 4.5 Opus：最懂程式碼的 AI 夥伴"
 description: "Anthropic 發布 Claude 4.5 系列，推出革命性的 Claude Code 工具，重新定義人機協作編程。"
 category: "Claude"
-image: "Claude-claude-opus-4-5-202511-thumbnail.jpg"
+image: "claude-opus-4-5-202511.jpg"
 date: 2025-11-20
 readingTime: "6 minutes"
 author: "AI Reporter"

@@ -2,7 +2,7 @@
 title: "Google Gemini 3 重磅登場：多模態推理的終極型態"
 description: "Google 發表 Gemini 3 與 Veo 3，搭載全新 Nano Banana2 架構，重新定義邊緣運算與影音生成。"
 category: "Google"
-image: "Google-google-gemini3-202511-thumbnail.jpg"
+image: "google-gemini3-202511.jpg"
 date: 2025-11-15
 readingTime: "8 minutes"
 author: "AI Reporter"

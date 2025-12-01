@@ -2,7 +2,7 @@
 title: "OpenAI GPT-5 與 o2：推理能力的量子跳躍"
 description: "OpenAI 突襲發布 GPT-5 與 o2 推理模型，展示了令人震驚的自我修正能力與 Agentic Workflow。"
 category: "ChatGPT"
-image: "ChatGPT-chatgpt-o2-analysis-202511-thumbnail.jpg"
+image: "chatgpt-o2-analysis-202511.jpg"
 date: 2025-11-18
 readingTime: "7 minutes"
 author: "AI Reporter"

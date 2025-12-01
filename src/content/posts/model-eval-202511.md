@@ -2,7 +2,7 @@
 title: "2025 年終 AI 模型評測報告：誰是真正的王者？"
 description: "深度解析 MMLU-Pro、Arena Hard 與 AgentBench 最新數據，揭示各大模型在真實場景下的表現。"
 category: "ModelEval"
-image: "ModelEval-model-eval-202511-thumbnail.jpg"
+image: "model-eval-202511.jpg"
 date: 2025-11-28
 readingTime: "10 minutes"
 author: "AI Reporter"
