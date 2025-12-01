@@ -4,45 +4,74 @@ import BaseLayout from './BaseLayout.astro';
 const { frontmatter } = Astro.props;
 ---
 
-<BaseLayout title={frontmatter.title}>
-  <article class="max-w-[760px] mx-auto bg-white px-6 py-16 md:px-0 shadow-sm">
-    <header class="mb-12 text-center">
-      <div class="flex justify-center gap-3 text-sm font-bold uppercase tracking-widest text-news-accent mb-6">
-        <span class="text-gray-500">{frontmatter.category}</span>
-        <span class="text-gray-300">•</span>
-        <span>{frontmatter.source || 'AI News'}</span>
-      </div>
-      <h1 class="text-4xl md:text-5xl font-black font-sans mb-6 leading-tight tracking-tight text-gray-900">{frontmatter.title}</h1>
-      <div class="flex justify-center items-center gap-4 text-gray-500 text-sm font-sans tracking-wide">
-        <time>{new Date(frontmatter.date).toLocaleDateString()}</time>
-        <span class="text-gray-300">•</span>
-        <span>{frontmatter.readingTime}</span>
-      </div>
-    </header>
-
+<BaseLayout title={frontmatter.title} fullWidth={true}>
+  <main class="bg-[#f5f5f7] min-h-screen pb-16">
+    
+    {/* Hero Image Section - Outside the card */}
     {frontmatter.image && (
-      <div class="mb-12 -mx-6 md:-mx-0">
-        <img src={`${import.meta.env.BASE_URL}images/${(frontmatter.image || 'placeholder.jpg').replace(/^\//, '')}`} alt={frontmatter.title} class="w-full h-auto rounded-sm" />
-      </div>
-    )}
-
-    <div class="prose prose-lg prose-slate mx-auto font-sans prose-p:leading-relaxed prose-headings:font-bold prose-a:text-news-accent hover:prose-a:text-black transition-colors">
-      <slot />
-    </div>
-
-    <hr class="my-16 border-gray-100" />
-
-    {frontmatter.tags && frontmatter.tags.length > 0 && (
-      <div class="bg-gray-50 p-8 rounded-lg">
-        <h3 class="font-bold mb-4 text-gray-900">Tags</h3>
-        <div class="flex flex-wrap gap-3">
-          {frontmatter.tags.map((tag: string) => (
-            <span class="bg-white border border-gray-200 px-4 py-1.5 text-sm font-bold uppercase tracking-wider text-gray-600 hover:border-gray-400 transition-colors cursor-default">
-              #{tag}
-            </span>
-          ))}
+      <div class="max-w-4xl mx-auto px-4 md:px-0 pt-10 pb-8">
+        <div class="rounded-md overflow-hidden shadow-sm aspect-[21/9]">
+          <img 
+            src={`${import.meta.env.BASE_URL}images/${(frontmatter.image || 'placeholder.jpg').replace(/^\//, '')}`} 
+            alt={frontmatter.title} 
+            class="w-full h-full object-cover" 
+          />
         </div>
       </div>
     )}
-  </article>
+
+    {/* Article Card */}
+    <article class="bg-white max-w-4xl mx-auto px-8 md:px-12 py-12 shadow-sm border border-gray-100 rounded-sm mb-16">
+      
+      {/* Meta Section */}
+      <header class="mb-10">
+        <div class="flex items-center justify-between border-t border-gray-100 pt-6 mb-6">
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-full bg-gray-200 flex items-center justify-center text-lg">
+              👾
+            </div>
+            <div class="flex flex-col">
+              <span class="text-xs font-bold uppercase tracking-wider text-gray-900">{frontmatter.author || 'AI Reporter'}</span>
+              <span class="text-[10px] font-bold uppercase tracking-widest text-news-accent">{frontmatter.category}</span>
+            </div>
+          </div>
+          <div class="flex items-center gap-4 text-xs font-medium text-gray-400 uppercase tracking-wide">
+            <time>{new Date(frontmatter.date).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })}</time>
+            <span>•</span>
+            <span>{frontmatter.readingTime}</span>
+          </div>
+        </div>
+
+        <div class="border-b border-gray-100 pb-8 mb-8">
+          <h1 class="text-3xl md:text-5xl font-bold font-serif leading-tight tracking-tight text-gray-900">
+            {frontmatter.title}
+          </h1>
+        </div>
+      </header>
+
+      {/* Content */}
+      <div class="prose prose-lg prose-slate max-w-none font-sans prose-p:leading-loose prose-p:mb-6 prose-headings:font-bold prose-headings:mt-10 prose-headings:mb-4 prose-a:text-news-accent hover:prose-a:text-black transition-colors">
+        <slot />
+      </div>
+
+      {/* Tags */}
+      {frontmatter.tags && frontmatter.tags.length > 0 && (
+        <div class="mt-12 pt-8 border-t border-gray-100">
+          <div class="flex flex-wrap gap-2">
+            {frontmatter.tags.map((tag: string) => (
+              <span class="bg-gray-50 border border-gray-200 px-3 py-1 text-xs font-bold uppercase tracking-wider text-gray-500">
+                #{tag}
+              </span>
+            ))}
+          </div>
+        </div>
+      )}
+    </article>
+
+    {/* Similar News Slot */}
+    <div class="max-w-4xl mx-auto px-4 md:px-0">
+      <slot name="similar-news" />
+    </div>
+
+  </main>
 </BaseLayout>

@@ -26,9 +26,9 @@ const similarPosts = allPosts
   <Content />
 
   {similarPosts.length > 0 && (
-    <div class="mt-16">
-      <SectionTitle title="Similar News" />
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+    <div slot="similar-news" class="mt-16">
+      <div class="text-sm font-semibold tracking-[0.2em] text-gray-500 mb-6 uppercase">Similar News</div>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
         {similarPosts.map(p => <ArticleCard post={p} />)}
       </div>
     </div>

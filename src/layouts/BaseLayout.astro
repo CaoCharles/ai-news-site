@@ -3,7 +3,7 @@ import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import '../styles/global.css'; // We will create this next
 
-const { title, description = "Latest AI News and Trends" } = Astro.props;
+const { title, description = "Latest AI News and Trends", fullWidth = false } = Astro.props;
 ---
 
 <!doctype html>
@@ -21,9 +21,15 @@ const { title, description = "Latest AI News and Trends" } = Astro.props;
 	</head>
 	<body class="bg-news-gray text-news-black min-h-screen flex flex-col">
 		<Header />
-    <main class="flex-grow container mx-auto px-4 py-8">
-		  <slot />
-    </main>
+    {fullWidth ? (
+      <div class="flex-grow">
+        <slot />
+      </div>
+    ) : (
+      <main class="flex-grow container mx-auto px-4 py-8">
+        <slot />
+      </main>
+    )}
 		<Footer />
 	</body>
 </html>
