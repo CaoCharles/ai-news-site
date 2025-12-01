@@ -7,12 +7,12 @@ import { getCollection } from 'astro:content';
 
 const allPosts = await getCollection('posts');
 const posts = allPosts
-  .filter(p => p.data.category === 'Technology')
+  .filter(p => p.data.category === 'ModelEval')
   .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
 ---
 
-<BaseLayout title="Technology News">
-  <SectionTitle title="Technology" />
+<BaseLayout title="Model Evaluation">
+  <SectionTitle title="模型成效評估 (Model Evals)" />
   <ArticleGrid>
     {posts.map(post => <ArticleCard post={post} />)}
   </ArticleGrid>

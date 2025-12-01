@@ -1,7 +1,7 @@
 ---
 title: "Podcast: The Future of Code with Codex"
 date: "2024-10-25"
-category: "Podcast"
+category: "ModelEval"
 source: "OpenAI"
 tags: ["Podcast", "Coding", "Future"]
 summary: "A deep dive into how AI is changing the software engineering landscape."

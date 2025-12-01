@@ -20,9 +20,10 @@ const mainLatest = latestNews[0];
 const sideLatest = latestNews.slice(1);
 
 // 3. Category Specific
-const worldNews = sortedPosts.filter(p => p.data.category === 'World').slice(0, 4);
-const techNews = sortedPosts.filter(p => p.data.category === 'Technology').slice(0, 4);
-const podcasts = sortedPosts.filter(p => p.data.category === 'Podcast').slice(0, 4);
+const googleNews = sortedPosts.filter(p => p.data.category === 'Google').slice(0, 4);
+const chatGPTNews = sortedPosts.filter(p => p.data.category === 'ChatGPT').slice(0, 4);
+const claudeNews = sortedPosts.filter(p => p.data.category === 'Claude').slice(0, 4);
+const evalNews = sortedPosts.filter(p => p.data.category === 'ModelEval').slice(0, 4);
 ---
 
 <BaseLayout title="Home">
@@ -51,37 +52,38 @@ const podcasts = sortedPosts.filter(p => p.data.category === 'Podcast').slice(0,
     </div>
   </section>
 
-  {/* World News */}
-  {worldNews.length > 0 && (
+  {/* Google Updates */}
+  {googleNews.length > 0 && (
     <section class="mb-16">
-      <SectionTitle title="World News" link="/world" />
+      <SectionTitle title="Google Updates" link="/google" />
       <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
         <div class="md:col-span-2 bg-news-black text-white p-6">
-          <ArticleCard post={worldNews[0]} class="text-white" />
+          <ArticleCard post={googleNews[0]} class="text-white" />
         </div>
         <div class="md:col-span-2 grid grid-cols-1 gap-6">
-           {worldNews.slice(1).map(post => <ArticleCard post={post} horizontal={true} />)}
+           {googleNews.slice(1).map(post => <ArticleCard post={post} horizontal={true} />)}
         </div>
       </div>
     </section>
   )}
 
-  {/* Technology News */}
-  {techNews.length > 0 && (
+  {/* ChatGPT & Claude */}
+  {(chatGPTNews.length > 0 || claudeNews.length > 0) && (
     <section class="mb-16">
-      <SectionTitle title="Technology" link="/technology" />
+      <SectionTitle title="ChatGPT & Claude" link="/chatgpt" />
       <ArticleGrid>
-        {techNews.map(post => <ArticleCard post={post} />)}
+        {chatGPTNews.map(post => <ArticleCard post={post} />)}
+        {claudeNews.map(post => <ArticleCard post={post} />)}
       </ArticleGrid>
     </section>
   )}
 
-  {/* Podcasts */}
-  {podcasts.length > 0 && (
+  {/* Model Evaluation */}
+  {evalNews.length > 0 && (
     <section class="mb-16">
-      <SectionTitle title="Podcasts" link="/podcasts" />
+      <SectionTitle title="Model Evaluation & Benchmarks" link="/evals" />
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-        {podcasts.map(post => <PodcastCard post={post} />)}
+        {evalNews.map(post => <PodcastCard post={post} />)}
       </div>
     </section>
   )}

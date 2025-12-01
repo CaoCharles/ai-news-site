@@ -7,12 +7,12 @@ import { getCollection } from 'astro:content';
 
 const allPosts = await getCollection('posts');
 const posts = allPosts
-  .filter(p => p.data.category === 'World')
+  .filter(p => p.data.category === 'Google')
   .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
 ---
 
-<BaseLayout title="World News">
-  <SectionTitle title="World News" />
+<BaseLayout title="Google News">
+  <SectionTitle title="Google" />
   <ArticleGrid>
     {posts.map(post => <ArticleCard post={post} />)}
   </ArticleGrid>

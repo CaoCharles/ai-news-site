@@ -1,7 +1,7 @@
 ---
 title: "Anthropic Releases Claude 3.5 Opus"
 date: "2024-10-27"
-category: "World"
+category: "Claude"
 source: "Anthropic"
 tags: ["Claude", "Anthropic", "Safety"]
 summary: "The new model sets a benchmark for safety and steerability in large language models."

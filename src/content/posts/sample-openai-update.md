@@ -1,7 +1,7 @@
 ---
 title: "OpenAI Teases GPT-5: What We Know So Far"
 date: "2024-10-28"
-category: "Technology"
+category: "ChatGPT"
 source: "OpenAI"
 tags: ["GPT-5", "OpenAI", "LLM"]
 summary: "Rumors swirl as OpenAI researchers hint at 'magic' in the upcoming model iteration."

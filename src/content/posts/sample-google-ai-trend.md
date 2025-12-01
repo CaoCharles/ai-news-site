@@ -1,7 +1,7 @@
 ---
 title: "Google Unveils Gemini 2.0: The Next Frontier"
 date: "2024-10-29"
-category: "Technology"
+category: "Google"
 source: "Google"
 tags: ["AI", "Gemini", "DeepMind"]
 summary: "Google's latest model promises unprecedented multimodal capabilities and reasoning speeds."

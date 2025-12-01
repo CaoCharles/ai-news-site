@@ -1,7 +1,7 @@
 ---
 title: "AI Revolutionizes Premier League Tactics"
 date: "2024-10-26"
-category: "Sports"
+category: "ModelEval"
 source: "Mixed"
 tags: ["Sports", "Data Analytics", "Computer Vision"]
 summary: "How top football clubs are using computer vision to analyze player movements in real-time."
