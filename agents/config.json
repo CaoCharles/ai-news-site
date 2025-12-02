@@ -1,0 +1,83 @@
+{
+  "git_enabled": true,
+  "auto_publish": false,
+  "schedules": {
+    "discovery": "0 */6 * * *",
+    "research": "0 0 * * 1",
+    "review": "0 */2 * * *"
+  },
+  "reporters": {
+    "google": {
+      "enabled": true,
+      "priority": 1,
+      "sources": [
+        "https://blog.google/technology/ai/",
+        "https://ai.google/research/",
+        "https://deepmind.google/"
+      ]
+    },
+    "claude": {
+      "enabled": true,
+      "priority": 1,
+      "sources": [
+        "https://www.anthropic.com/news",
+        "https://www.anthropic.com/research"
+      ]
+    },
+    "chatgpt": {
+      "enabled": true,
+      "priority": 1,
+      "sources": [
+        "https://openai.com/blog",
+        "https://openai.com/research"
+      ]
+    },
+    "grok": {
+      "enabled": true,
+      "priority": 2,
+      "sources": [
+        "https://x.ai/"
+      ]
+    },
+    "qianwen": {
+      "enabled": true,
+      "priority": 2,
+      "sources": [
+        "https://tongyi.aliyun.com/",
+        "https://www.alibabacloud.com/blog"
+      ]
+    }
+  },
+  "quality_threshold": 7.0,
+  "auto_approve_threshold": 9.0,
+  "api_config": {
+    "anthropic_api_key_env": "ANTHROPIC_API_KEY",
+    "model": "claude-3-5-sonnet-20241022",
+    "max_tokens": 4096,
+    "temperature": 0.7
+  },
+  "content_rules": {
+    "min_word_count": 800,
+    "max_word_count": 1500,
+    "required_sections": [
+      "Introduction",
+      "Background",
+      "What's New",
+      "Technical Insights",
+      "Limitations",
+      "Industry Implications",
+      "Conclusion"
+    ],
+    "required_tags_count": [3, 5]
+  },
+  "notification": {
+    "enabled": false,
+    "slack_webhook_url": "",
+    "email": {
+      "enabled": false,
+      "smtp_server": "",
+      "from": "",
+      "to": []
+    }
+  }
+}

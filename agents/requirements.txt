@@ -1,0 +1,48 @@
+# Multi-Agent 系統依賴
+
+# Anthropic Claude API
+anthropic>=0.39.0
+
+# 網頁爬取
+requests>=2.31.0
+beautifulsoup4>=4.12.0
+selenium>=4.15.0
+
+# 任務調度
+schedule>=1.2.0
+apscheduler>=3.10.0
+
+# 數據處理
+python-dateutil>=2.8.2
+
+# 配置管理
+python-dotenv>=1.0.0
+
+# 日誌和監控
+loguru>=0.7.0
+
+# Git 操作
+GitPython>=3.1.40
+
+# 數據驗證
+pydantic>=2.5.0
+
+# HTTP 客戶端
+httpx>=0.25.0
+
+# RSS Feed 解析
+feedparser>=6.0.10
+
+# JSON Schema 驗證
+jsonschema>=4.20.0
+
+# 命令行工具
+click>=8.1.7
+
+# 進度條
+tqdm>=4.66.0
+
+# 測試工具
+pytest>=7.4.0
+pytest-asyncio>=0.21.0
+pytest-mock>=3.12.0
